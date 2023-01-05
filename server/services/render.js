@@ -2,7 +2,7 @@ const axios = require("axios");
 
 exports.homeRoutes = (req, res) => {
   axios
-    .get("https://usermanagementapp.onrender.com/api/users")
+    .get("http://localhost:3000/api/users")
     .then(function (response) {
       res.render("index", { users: response.data });
     })
@@ -12,10 +12,11 @@ exports.homeRoutes = (req, res) => {
 };
 
 //http://localhost:3000/api/users
+//https://usermanagementapp.onrender.com
 
 exports.update_user = (req, res) => {
   axios
-    .get("https://usermanagementapp.onrender.com/api/users", {
+    .get("http://localhost:3000/api/users", {
       params: { id: req.query.id },
     })
     .then(function (userData) {
